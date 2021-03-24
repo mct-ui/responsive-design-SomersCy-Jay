@@ -354,9 +354,58 @@ a:focus {
   padding: 0;
 }
 
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+  display: flow-root; /*zo worden margins opgeteld*/
+}
+
+.o-section + .o-section {
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .o-section--lg + .o-section--lg,
+  .o-section--xl + .o-section--xl {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .o-section--xl + .o-section--xl {
+    margin-top: 72px;
+  }
+}
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header__nav {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .c-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .c-header__nav {
+    display: block;
+  }
+}
+
 .c-logo {
   height: 35px;
 }
@@ -422,6 +471,33 @@ a:focus {
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+  padding-top: 0 !important;
+}
+
+.u-pt-xs {
+  padding-top: 8px !important;
+}
+.u-pt-sm {
+  padding-top: 16px !important;
+}
+.u-pt-m {
+  padding-top: 24px !important;
+}
+
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+.u-mb-xs {
+  margin-bottom: 8px !important;
+}
 
 /*
     Utilities: max-width
